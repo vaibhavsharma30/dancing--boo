@@ -1,0 +1,54 @@
+doctype html
+html 
+    head 
+        title Dancing boo 
+        style 
+           include ../static/style.css 
+    body 
+        nav#navbar.top 
+            ul
+                li #[a(href="/") Home] 
+                li #[a(href="../static/aboutUs.html") About Us]
+                li #[a(href="/") Class Info]
+                li #[a(href="../static/Follow.html") Follow]
+                li #[a(href="../static/contact.html") Contact Us]
+            
+                    
+        section#introSection
+            div Welcome to world of Dancing 
+            div.small Dance ek Art hai Art 
+        section#ourMission
+            h2 Our Missions
+            div.card
+                h3 Dance Perfection
+                div.card-Box
+                    div.card-Img
+                        img(src="/static/images/1.png")
+                    div.card-Content
+                        p This Academy assures about the Perfection
+            div.card
+                h3 Dance Coardination
+                div.card-Box
+                    div.card-Img
+                        img(src="/static/images/2.png")
+                    div.card-Content
+                        p This Academy tells the value of Coardination
+            div.card
+                h3 Dance Expertise
+                div.card-Box
+                    div.card-Img
+                        img(src="/static/images/3.png")
+                    div.card-Content
+                        p This Academy makes you expert Dancer
+        section#SponsorSection
+            h2 Our Sponsor 
+            div#sponsors 
+                img(src="/static/images/s1.jpg",alt="Sponsors image",class="spImg")
+                img(src="/static/images/s2.jpg",alt="Sponsors image",class="spImg")
+                img(src="/static/images/s3.jpg",alt="Sponsors image",class="spImg")
+                img(src="/static/images/s4.jpg",alt="Sponsors image",class="spImg")
+                
+
+        footer#footer 
+            | Copyright © 2021 DancingBoo.com | All rights  Reserverd
+        include ../static/index.js

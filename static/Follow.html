@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Follow</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        
+      @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+      #navbar {
+        background-color: black;
+        padding: 17px 10px;
+      }
+      #navbar ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
+      #navbar li {
+        list-style: none;
+      }
+      #navbar li a {
+        color: #bcbd67;
+        font-size: 23px;
+        text-decoration: none;
+        font-family: 'Pacifico', cursive;
+        padding: 10px 20px;
+      }
+      #navbar li a:hover {
+        color: rgb(245, 177, 7);
+        background-color: honeydew;
+        padding: px;
+
+        border-radius: 30px;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Josefin Sans', sans-serif;
+      }
+      body {
+        background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+      }
+      .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .main {
+        height: 100vh;
+      }
+      .box {
+        width: 350px;
+        height: 350px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 288);
+        border-radius: 23px;
+        flex-direction: column;
+        color: white;
+        position: relative;
+        overflow: hidden;
+      }
+      .box img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50px;
+      }
+      .user-name {
+        margin-bottom: 5px;
+        font-size: 2rem;
+      }
+      .skill {
+        color: rgba(255, 255, 255, 0.555);
+      }
+      .arr_container,
+      .cancel {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background: white;
+        bottom: 0;
+        right: 0;
+        border-radius: 23px 0 23px 0;
+        color: rgb(70, 70, 70);
+        font-size: 1.6rem;
+        transition: all 0.4s;
+      }
+      .arr_container i {
+        transform: rotate(45deg);
+      }
+      .active_arr {
+        transform: translate(80%, 80%);
+      }
+      .left_container {
+        position: absolute;
+        background: #0f2027;
+        width: 100%;
+        height: 100%;
+        border-radius: 23px;
+        padding: 40px 0 0 20px;
+        transition: all 0.4s;
+      }
+      .off {
+        transform: translate(-80%, -80%) rotate(90deg);
+      }
+      .active {
+        transform: translate(0) rotate(0);
+      }
+      .left_container p {
+        margin-bottom: 15px;
+        font-size: 1.2rem;
+      }
+      .left_container .skills div {
+        display: inline-block;
+        color: rgb(155, 155, 155);
+        width: 110px;
+        height: 35px;
+        border: 1px solid rgb(155, 155, 155);
+        padding: 5px 10px;
+        font-size: 1.3rem;
+        margin: 4px 4px 4px 0;
+      }
+      .left_container .icon {
+        font-size: 1.6rem;
+        margin-top: 10px;
+        padding-top: 25px;
+        padding-left: 10px;;
+      }
+      .left_container .icon i {
+        color: #cfcfcf;
+        cursor: pointer;
+        margin-right: 10px;
+        transition: all 0.4s;
+      }
+      .left_container .icon i:hover {
+        color: #2c5364;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="top" id="navbar">
+      <ul>
+        <li><a href="/">Home</a> </li>
+          <li><a href="../static/aboutUs.html">About Us</a></li>
+          <li><a href="../static/ClassInfo.html">Class Info</a></li>
+          <li><a href="../static/Follow.html">Follow</a></li>
+          <li><a href="../static/contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+    <div class="main center">
+      <div class="box center">
+        <img src="../static/images/1.png" alt="" />
+        <div>
+          <p class="user-name">Dancing Boo</p>
+          <p class="skill">A Dance academy website</p>
+        </div>
+        <div class="arr_container center">
+          <i class="fa fa-arrow-right" aria-hidden="true"></i>
+        </div>
+        <div class="left_container off">
+          <p>Skills Used</p>
+          <div class="skills">
+            <div>HTML</div>
+            <div>CSS</div>
+            <div>Pug</div>
+            <div>Js</div>
+          </div>
+          <div class="icon">
+            
+            <i class="fa fa-instagram" aria-hidden="true" style="font-size:45px"></i>
+            <i class="fa fa-github" aria-hidden="true" style="font-size:45px"></i>
+            <i class="fa fa-facebook" aria-hidden="true" style="font-size:45px"></i>
+            <i class="fa fa-linkedin" aria-hidden="true" style="font-size:45px"></i>
+          </div>
+          <div class="cancel center">
+            <i class="fa fa-times" aria-hidden="true"></i>
+          </div>
+        
+      </div>
+    </div>
+    <script type="text/javascript">
+      const clr = document.querySelector(".cancel");
+      const arr = document.querySelector('.arr_container');
+      const left_container = document.querySelector('.left_container');
+
+      arr.addEventListener('click', () => {
+        arr.classList.add("active_arr");
+        if (left_container.classList.contains('off')) {
+          left_container.classList.remove('off');
+          left_container.classList.add('active');
+        }
+      });
+      clr.addEventListener("click", () => {
+        arr.classList.remove("active_arr");
+        if (left_container.classList.contains("active")) {
+          left_container.classList.remove("active");
+          left_container.classList.add("off");
+        }
+      });
+    </script>
+  </body>
+</html>
